@@ -1,0 +1,28 @@
+extends layout
+block content
+  h2=title
+  form(method='POST' action=`./`+arrival+`/`+departure)
+    div.form-group
+      label(for='name') First name
+      input#name.form-control(type='text', name='first_name' value=(undefined===reservation ? '' : reservation.first_name))
+    div.form-group
+      label(for='name') Last name
+      input#name.form-control(type='text', name='last_name' value=(undefined===reservation ? '' : reservation.first_name))
+    div.form-group
+      label(for='name') Email
+      input#name.form-control(type='text', name='email' value=(undefined===reservation ? '' : reservation.first_name))
+    div.form-group
+      label(for='name') Available rooms
+      br
+      each room in free_rooms
+        div.form-check.form-check-inline.checkbox-inline
+          label.checkbox-inline #{room}
+           input(type='checkbox', name='room', value=room)
+    div.form-group
+    button.btn.btn-primary(type='submit') Create reservation 
+  
+  if errors 
+   ul
+    for error in errors
+     li!= error.msg
+

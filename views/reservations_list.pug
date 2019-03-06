@@ -1,0 +1,28 @@
+extends layout
+block content
+  h1= title
+  table(class='table' id='myTable' style='width: 100%')  
+    thead
+      tr
+        th First Name
+        th Last Name
+        th Email
+        th Arrival
+        th Departure
+        th Rooms
+        th Actions
+    tbody
+      each reservation in reservations_list
+        tr 
+          td #{reservation.first_name}
+          td #{reservation.last_name}
+          td #{reservation.email}
+          td #{reservation.arrival_formatted}
+          td #{reservation.departure_formatted}
+          td #{reservation.rooms}
+          td
+            div.btn-toolbar
+              form(method='GET' action='reservations/modify_reservation/'+reservation._id)
+                button Modify 
+      else
+        li There are no books.

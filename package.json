@@ -1,0 +1,23 @@
+{
+  "name": "restapimvc",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "cookie-parser": "~1.4.3",
+    "datatables": "^1.10.18",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-validator": "^5.3.1",
+    "http-errors": "~1.6.2",
+    "moment": "^2.24.0",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.11",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11"
+  }
+}

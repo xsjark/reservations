@@ -1,0 +1,16 @@
+extends layout
+block content
+  h2= title
+  form(method='POST' action='./find_rooms_form/results/')
+    div.form-group
+      label(for='name') Arrival 
+      input#name.form-control(type='text', name='arrival')
+    div.form-group
+      label(for='name') Departure
+      input#name.form-control(type='text', name='departure')
+    button.btn.btn-primary(type='submit') Find available rooms
+
+  if errors 
+   ul
+    for error in errors
+     li!= error.msg

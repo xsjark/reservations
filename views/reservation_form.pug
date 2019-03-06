@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') First name
+      input#name.form-control(type='text', name='first_name' value=(undefined===reservation ? '' : reservation.first_name))
+    div.form-group
+      label(for='name') Last name
+      input#name.form-control(type='text', name='last_name' value=(undefined===reservation ? '' : reservation.first_name))
+    div.form-group
+      label(for='name') Email
+      input#name.form-control(type='text', name='email' value=(undefined===reservation ? '' : reservation.first_name))
+    div.form-group
+      label(for='name') Arrival
+      input#name.form-control(type='text', name='arrival' value=(undefined===reservation ? '' : reservation.first_name))
+    div.form-group
+      label(for='name') Departure
+      input#name.form-control(type='text', name='departure' value=(undefined===reservation ? '' : reservation.first_name))
+    div.form-group
+      label(for='name') Rooms
+      input#name.form-control(type='text', name='rooms' value=(undefined===reservation ? '' : reservation.first_name))
+    div.form-group
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+   ul
+    for error in errors
+     li!= error.msg
